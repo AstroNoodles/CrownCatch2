@@ -107,7 +107,7 @@
     <string name="distance_away_placeholder">Distance Away</string>
     <string name="open_for_take_out">Open For Take-out?</string>
     <string name="open_for_dine_in">Open For Dine In?</string>
-    <string name="ipa_key">AIzaSyA71Ugm0FqmEo1TdBta6x_7zaJ-z-no60Q</string>
+    
     <string name="text_still_loading">Finding Locations…</string>
     <string name="text_zero_results">The search found zero results. Check if you are located in a remote location.
         This might cause issues for the search. If not, try shifting your position.
