@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+<item android:id="@+id/findFood" android:icon="@drawable/ic_coffee"
+      android:title="@string/find_food_nearby" app:showAsAction="always" />
+<item android:id="@+id/leaderboard" android:icon="@drawable/ic_star" android:title="@string/leaderboard_title"
+      app:showAsAction="ifRoom" />
+</menu>

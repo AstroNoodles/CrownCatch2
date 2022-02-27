@@ -1,0 +1,145 @@
+<resources>
+    <string name="app_name">CrownCatch2</string>
+    <string name="intro">Intro</string>
+    <string name="map">Map</string>
+    <string name="points">Points</string>
+    <string name="news">News</string>
+    <string name="connect">Connect</string>
+    <string name="the_social_distance_map">The Social Distance Map</string>
+    <string name="select_home_address">Select Home Address</string>
+    <string name="insert_home_address_here">Insert home address here:</string>
+    <string name="the_app_to_social_distance">The App to Social Distance!</string>
+    <string name="welcome_to_crown_catch">Welcome to Crown Catch!</string>
+    <string name="what_to_do">What to do?</string>
+    <string name="view_map">View Map</string>
+    <string name="view_progress">View Progress</string>
+    <string name="view_news">View News</string>
+    <string name="set_up_bluetooth">Set up Bluetooth</string>
+    <string name="your_current_location_is">Your Current Location Is:</string>
+    <string name="miles_away_from_home">miles away from home</string>
+    <string name="enter_location">Log Location</string>
+    <string name="crown_catch_news">Crown Catch News</string>
+    <string name="rss_icon">RSS Icon</string>
+    <string name="sample_rss">AP</string>
+    <string name="_2_hours_ago">2 hours ago</string>
+    <string name="test_miles">Your distance from home will display here!</string>
+    <string name="channel_name">Crown Catch Notification Channel</string>
+    <string name="channel_desc">This is the channel for Crown Catch Notifications</string>
+    <string name="points_title">Crown Points: %1$d</string>
+    <string name="how_do_i_get_more_points">
+        How do I get more points?
+    </string>
+    <string name="points_info">Keep safe by staying away from others and staying close to your house.</string>
+    <string name="step_1">(1) Keep social distancing alive! \n Stay relatively close to your house! \n
+    </string>
+    <string name="step_2">(2) Keep informed! \n Read the news and see how the situation is evolving! \n
+    </string>
+    <string name="step_4">(4) Use this app often to let you do Steps 1 and 2 and 3!</string>
+    <string name="step_3">(3) You will feel rewarded for your efforts.
+    </string>
+    <string name="credits_poster">Credits for the poster from OU Medicine: \n
+        https://www.covidoumedicine.com/protecting-your-health/social-distancing/
+    </string>
+    <string name="social_distancing_poster">Social Distancing Poster</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="bluetooth_title">Bluetooth Connection Service</string>
+    <string name="bluetooth_advice">All Bluetooth Connections will show here. In order to practice good social
+        distancing, it is recommended to have weak connection to nearby phones.
+    </string>
+    <string name="find_phone_image">Phone Image per Find</string>
+    <string name="test_phone_name">Phone Name</string>
+    <string name="test_strength">Signal Strength: %1$d dBm</string>
+    <string name="test_distance">Relative Strength: %1$s</string>
+    <string name="start_connecting">Start Connecting!</string>
+    <string name="finding_connections">Finding Connections…</string>
+    <string name="find">Find</string>
+    <string name="instructions">In order to practice good social distancing, you can use one of the tabs above in the
+        toolbar to help you. \n For each tab, you can choose to: \n \n 1. See a map for how long and how far you are
+        from
+        your house. \n \n 2. Keep up with current news dealing with the coronavirus. \n \n 3. Find other people nearby
+        to keep
+        6 ft apart from them with Bluetooth connection. \n \n 4. See how many points you have acquired through helping
+        your
+        community in the app!
+    </string>
+    <string name="problem_button">Info button for problems</string>
+    <string name="social_distancing_alert">Be careful, as a precaution you should stay 6 ft away from others. \n Your
+        Bluetooth signal does not show
+        this…
+    </string>
+    <string name="low_strength">Low</string>
+    <string name="medium_strength">Medium</string>
+    <string name="high_strength">High</string>
+    <string name="sdAlert">Social Distancing Alert!</string>
+    <string name="troubleshooting_title">Not working?</string>
+    <string name="bluetooth_troubleshooting_message">This view only works if people nearby activate their Bluetooth.
+        \nIf this functionality does not work, try scanning for nearby devices using the
+        bluetooth functionality on your navigation bar of your phone.
+    </string>
+    <string name="bluetooth_not_supported">Bluetooth is not supported on this device.</string>
+    <string name="stay_home_alert">Stay-At-Home Alert!</string>
+    <string name="stay_home_message">You have stayed home for 1 hour and now have %2$d points.\nKeep up the good work!
+    </string>
+    <string name="miles_away">You are currently %1$.2f miles away from your house.</string>
+    <string name="great_job">Great Job!</string>
+    <string name="fill_location_alert">Make sure you fill out your location.</string>
+    <string name="precaution_message">As a precaution, it is best to stay home in the times of a pandemic. \n
+        You are currently %1$.2f miles from your home!"
+    </string>
+    <string name="loc_error">I\'m sorry. Type in the location again and we will give you a better answer.</string>
+    <string name="info_news">Find the latest news from the CDC, FDA and others on the coronavirus.</string>
+    <string name="load_news_txt">Loading News…</string>
+    <string name="cdc_newsroom">CDC Newsroom</string>
+    <string name="read_news">Read News!</string>
+    <string name="news_received">Obtaining News!</string>
+    <string name="npr_title">NPR</string>
+    <string name="nyt">New York Times</string>
+    <string name="unidentified_title">Unidentified</string>
+    <string name="fda_title">FDA</string>
+    <string name="internet_problem">Make sure your Internet is on to obtain recent news!</string>
+    <string name="find_food_nearby">Find Food Nearby</string>
+    <string name="leaderboard_title">Leaderboard</string>
+    <string name="find_nearby_restaurants_title">Find Nearby Restaurants!</string>
+    <string name="reminder_places">Remember to have your location feature on to access this feature!</string>
+    <string name="restaurant_name">Restaurant Name</string>
+    <string name="distance_away_placeholder">Distance Away</string>
+    <string name="open_for_take_out">Open For Take-out?</string>
+    <string name="open_for_dine_in">Open For Dine In?</string>
+    <string name="ipa_key">AIzaSyA71Ugm0FqmEo1TdBta6x_7zaJ-z-no60Q</string>
+    <string name="text_still_loading">Finding Locations…</string>
+    <string name="text_zero_results">The search found zero results. Check if you are located in a remote location.
+        This might cause issues for the search. If not, try shifting your position.
+    </string>
+    <string name="no_loc_found">No nearby places can be found. Try turning on your network connection or
+        finding a place with suitable Wi-Fi for Internet access.
+    </string>
+    <string name="news_points">You have earned 40 points by looking at the news. Thanks for keeping informed!</string>
+    <string name="finding_restaurants">Congrats! You earned 10 points for finding available restaurants near you.
+        Climb up in the leaderboard by using this feature more frequently.
+    </string>
+    <string name="query_leaderboard">You are not registered on the leaderboard yet. Would you like to register?</string>
+    <string name="register_sign">REGISTER</string>
+    <string name="register_dialog_title">CrownCatch Leaderboard Signup.</string>
+    <string name="leadershipDesc">In order to register you for our online leaderboard, we are going to need a little bit
+        of information from you. Your position will update as soon as you finish this dialog.
+    </string>
+    <string name="register_title">Register For The Leaderboard!</string>
+    <string name="username_prompt">Username:</string>
+    <string name="sample_username">xLuigix336</string>
+    <string name="fav_hex_color_prompt">Favorite Hexadecimal Color:</string>
+    <string name="sample_hex_color">#757575</string>
+    <string name="optional_desc_prompt">Description (Optional):</string>
+    <string name="surname_prompt">Fill in your surname here if wanted!</string>
+    <string name="submit_leaderboard">Submit</string>
+    <string name="leaderboard_desc">Look at your standings in the leaderboard and try to complete tasks to show your
+        coronavirus survival expertise!
+    </string>
+    <string name="sample_name">Mario Penna</string>
+    <string name="sample_desc">Social Distancing WARRIOR!</string>
+    <string name="user_favorite_color">User Favorite Color</string>
+    <string name="sample_points">40</string>
+    <string name="leaderboard_thanks">Thanks for registering!</string>
+
+</resources>

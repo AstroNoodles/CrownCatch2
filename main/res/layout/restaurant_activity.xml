@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                   xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+                                                   android:layout_height="match_parent">
+
+    <TextView
+            android:text="@string/find_nearby_restaurants_title"
+            android:layout_width="wrap_content"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black"
+            android:layout_height="wrap_content" android:id="@+id/restaurant_title"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="24dp" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="68dp"/>
+
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+              android:textColor="@android:color/holo_red_dark"
+              android:textSize="12sp"
+              android:text="@string/reminder_places"
+              android:id="@+id/location_reminder"
+              android:layout_marginTop="16dp"
+              app:layout_constraintTop_toBottomOf="@+id/restaurant_title" app:layout_constraintEnd_toEndOf="parent"
+              android:layout_marginEnd="32dp"/>
+    <org.osmdroid.views.MapView android:layout_width="@dimen/map_width" android:layout_height="@dimen/map_height"
+                                android:id="@+id/restaurant_view"
+                                app:layout_constraintTop_toBottomOf="@+id/location_reminder"
+                                android:layout_marginTop="32dp" app:layout_constraintStart_toStartOf="parent"
+    />
+    <androidx.recyclerview.widget.RecyclerView android:layout_width="match_parent" android:layout_height="wrap_content"
+                                               android:id="@+id/recycler_restaurants"
+                                               tools:layout_editor_absoluteX="0dp"
+                                               app:layout_constraintTop_toBottomOf="@+id/restaurant_view"
+                                               android:layout_marginTop="20dp"/>
+    <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+              android:id="@+id/emptyRecyclerText" android:text="@string/text_still_loading"
+              app:layout_constraintTop_toBottomOf="@id/recycler_restaurants"
+              app:layout_constraintLeft_toRightOf="parent"
+              android:textColor="@android:color/black" android:textSize="15sp" android:layout_marginTop="32dp"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,234 @@
+//    private static class RSSAsyncTask extends AsyncTask<URL, Integer, String> {
+//
+//        private final List<Bitmap> images = new ArrayList<>(15);
+//        private final List<String> sources = new ArrayList<>(15);
+//        private final List<String> headers = new ArrayList<>(15);
+//        private final List<String> links = new ArrayList<>(15);
+//        private final List<String> hours_ago = new ArrayList<>(15);
+//        // private final WeakReference<NewsRecyclerFragment> fragmentRef;
+
+
+
+//        private RSSAsyncTask(NewsRecyclerFragment c){
+//            fragmentRef = new WeakReference<>(c);
+//        }
+//
+//        @Override
+//        protected void onPreExecute() {
+//            super.onPreExecute();
+//            System.out.println("START!!!!!");
+//
+//            NewsRecyclerFragment frag = fragmentRef.get();
+//            if(frag == null || frag.isRemoving()) return;
+//
+//            frag.pBar.setVisibility(View.VISIBLE);
+//            frag.pBar.setProgress(0);
+//        }
+//
+//        @Override
+//        protected String doInBackground(URL... urls) {
+//            try {
+//                for(URL url : urls) {
+//                    XmlPullParserFactory factory = XmlPullParserFactory.newInstance();
+//                    factory.setNamespaceAware(false);
+//                    XmlPullParser pullParser = factory.newPullParser();
+//                    pullParser.setInput(url.openStream(), "UTF_8");
+//
+//                    if(url.getHost().contains("cdc")){
+//                        readCDCRSS(pullParser);
+//                    } else {
+//                        readNormalRSS(url, pullParser);
+//                    }
+//                    publishProgress(links.size());
+//                }
+//            } catch (XmlPullParserException | IOException e) {
+//                e.printStackTrace();
+//            }
+//
+//            return null;
+//        }
+//
+//        @Override
+//        protected void onProgressUpdate(Integer... values) {
+//            NewsRecyclerFragment frag = fragmentRef.get();
+//            if(frag == null || frag.isRemoving()) return;
+//
+//            frag.pBar.setProgress(values[0]);
+//        }
+//
+//        private void readCDCRSS(XmlPullParser pullParser) throws XmlPullParserException, IOException{
+//            // The CDC newsroom has weird rss syntax that I should put it into a new method.
+//            NewsRecyclerFragment frag = fragmentRef.get();
+//            if(frag == null || frag.isRemoving()) return;
+//
+//            boolean insideEvent = false;
+//            int eventType = pullParser.getEventType();
+//            while(eventType != XmlPullParser.END_DOCUMENT){
+//                if(eventType == XmlPullParser.START_TAG){
+//                    switch(pullParser.getName().toLowerCase()){
+//                        case "event":
+//                            insideEvent = true;
+//                            break;
+//                        case "title":
+//                            if(insideEvent){
+//                                headers.add(pullParser.nextText());
+//                            }
+//                            break;
+//                        case "id":
+//                            if(insideEvent){
+//                                links.add(pullParser.nextText());
+//                            }
+//                            break;
+//                        case "updated":
+//                            if(insideEvent){
+//                                System.out.println("date obtained");
+//                                hours_ago.add(formatDateFromRSS(pullParser.nextText()));
+//                            }
+//                            break;
+//                    }
+//                    sources.add(frag.getString(R.string.cdc_newsroom));
+//
+//                    String cdcImg = "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/US_CDC_logo.svg/1280px-US_CDC_logo.svg.png";
+//                    images.add(BitmapFactory.decodeStream(new URL(cdcImg).openStream()));
+//
+//                } else if(eventType == XmlPullParser.END_TAG && pullParser.getName().equalsIgnoreCase("event")){
+//                    insideEvent = false;
+//                }
+//                eventType = pullParser.next();
+//            }
+//        }
+//
+//        private void readNormalRSS(URL url, XmlPullParser pullParser) throws XmlPullParserException, IOException {
+//            boolean insideItem = false;
+//            int eventType = pullParser.getEventType();
+//
+//            while (eventType != XmlPullParser.END_DOCUMENT) {
+//                if(eventType == XmlPullParser.START_TAG) {
+//                    boolean hasImage = false;
+//                    switch (pullParser.getName().toLowerCase()) {
+//                        case "item":
+//                            insideItem = true;
+//                            break;
+//                        case "title":
+//                            if (insideItem) {
+//                                headers.add(pullParser.nextText());
+//                            }
+//                            break;
+//                        case "pubdate":
+////                            if (insideItem) {
+////                                hours_ago.add(pullParser.nextText());
+////                            }
+//                            hours_ago.add(formatDateFromRSS(pullParser.nextText()));
+//                            break;
+//                        case "link":
+//                            if (insideItem) {
+//                                links.add(pullParser.nextText());
+//                            }
+//                            break;
+//                        case "content:encoded":
+//                            // This is questionable for NPR but I don't want the full HTML text, just the image
+//                            String imgHTML = pullParser.nextText();
+//                            int srcStart = imgHTML.indexOf("src='") + 5;
+//                            int srcEnd = imgHTML.indexOf("' alt='") - 1;
+//                            String imgLink = imgHTML.substring(srcStart, srcEnd);
+//
+//                            Bitmap img = BitmapFactory.decodeStream(new URL(imgLink).openStream());
+//                            images.add(img);
+//                            hasImage = true;
+//                            break;
+//                        case "media:content":
+//                            // this will return the url image for the NYT rss feed
+//                            String urlNYT = pullParser.getAttributeValue(null, "url");
+//                            Bitmap imgNYT = BitmapFactory.decodeStream(new URL(urlNYT).openStream());
+//                            images.add(imgNYT);
+//                            hasImage = true;
+//                            break;
+//                    }
+//                    if (!hasImage) {
+//                        String imageURL = "";
+//                        if (url.getHost().equalsIgnoreCase("fda")) {
+//                            // TODO You must get credit in order to use this image! You could be sued!!!!
+//                            imageURL = "https://pbs.twimg.com/profile_images/773141404860162061/WK4RgHMx_400x400.jpg";
+//                        }
+//                        Bitmap imageXtra = BitmapFactory.decodeStream(new URL(imageURL).openStream());
+//                        images.add(imageXtra);
+//                    }
+//                    String host = url.getHost();
+//
+//                    if(host.contains("npr")){
+//                        sources.add("NPR");
+//                    } else if(host.contains("nyt")){
+//                        sources.add("New York Times");
+//                    } else if(host.contains("fda")){
+//                        sources.add("FDA");
+//                    } else {
+//                        sources.add("Unidentified");
+//                    }
+//
+//                } else if(eventType == XmlPullParser.END_TAG && pullParser.getName().equalsIgnoreCase("item")){
+//                    insideItem = false;
+//                }
+//                eventType = pullParser.next();
+//            }
+//        }
+//
+//        private String formatDateFromRSS(String rssDate){
+//            try {
+//                SimpleDateFormat sdf = new SimpleDateFormat("EEE, dd MMM yyyy HH:mm:ss zzz", Locale.ENGLISH);
+//                Date date = sdf.parse(rssDate);
+//
+//                SimpleDateFormat usformat = new SimpleDateFormat("EEE, MMM dd yyyy hh:mm:ss a", Locale.US);
+//                return usformat.format(date);
+//            } catch(ParseException e){
+//                e.printStackTrace();
+//            }
+//            return "Unable " + rssDate;
+//        }
+//
+//        @Override
+//        protected void onPostExecute(String s) {
+//            super.onPostExecute(s);
+//
+//            NewsRecyclerFragment frag = fragmentRef.get();
+//            if(frag == null || frag.isRemoving()) return;
+//
+//            frag.pBar.setProgress(100);
+//            frag.startTask.setClickable(true);
+//
+//            System.out.println(images);
+//            System.out.println(headers);
+//            System.out.println(links);
+//            System.out.println(sources);
+//            System.out.println(hours_ago);
+//
+//            frag.rv.setAdapter(new RecyclerCardAdapter(frag.getContext(), images, headers, links, sources, hours_ago));
+//
+//            NotificationCompat.Builder b = notifyDone("All of the COVID-19 news has been loaded from reliable sources!");
+//            if(b != null){
+//                NotificationManagerCompat nmc = NotificationManagerCompat.from(frag.getContext());
+//                nmc.notify(3, b.build());
+//            }
+//
+//        }
+
+//        private NotificationCompat.Builder notifyDone(String message) {
+//
+//            NewsRecyclerFragment frag = fragmentRef.get();
+//            if(frag == null || frag.isRemoving()) return null;
+//
+//            Intent i = new Intent(frag.getContext(), MainActivity.class);
+//            i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+//            PendingIntent pi = PendingIntent.getActivity(frag.getContext(), 1, i, 0);
+//
+//            return new NotificationCompat.Builder(frag.getContext(), MapActivity2.CHANNEL_ID)
+//                    .setContentText(message)
+//                    .setContentTitle(frag.getString(R.string.news_received))
+//                    .setSmallIcon(R.drawable.notify_done)
+//                    .setCategory(NotificationCompat.CATEGORY_REMINDER)
+//                    .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+//                    .setContentIntent(pi)
+//                    .setAutoCancel(true);
+//        }
+
+
+//    }

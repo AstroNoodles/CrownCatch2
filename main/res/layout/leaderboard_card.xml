@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                                   xmlns:app="http://schemas.android.com/apk/res-auto"
+                                   xmlns:tools="http://schemas.android.com/tools"
+                                   app:cardCornerRadius="2dp"
+                                   app:cardElevation="3dp"
+                                   android:background="@drawable/black_border"
+                                   app:cardBackgroundColor="#e3f2fd" android:layout_width="match_parent"
+                                   android:layout_height="wrap_content" android:id="@+id/leaderboard_card">
+    <androidx.constraintlayout.widget.ConstraintLayout android:layout_width="match_parent"
+                                                       android:layout_height="wrap_content">
+        <ImageView android:layout_width="@dimen/color_width" android:layout_height="@dimen/color_height"
+                   android:id="@+id/favColor"
+                   android:src="@color/ratingOn"
+                   android:contentDescription="@string/user_favorite_color"
+                   app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:id="@+id/leaderboard_name" android:textSize="17sp" android:text="@string/sample_name"
+                  android:textColor="@android:color/black"
+                  app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="@id/favColor"
+                  android:layout_marginTop="16dp" android:layout_marginStart="108dp" android:textStyle="bold"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:id="@+id/leadershipDesc" android:text="@string/sample_desc"
+                  android:textStyle="italic" android:textSize="12sp"
+                  app:layout_constraintTop_toBottomOf="@id/leaderboard_name"
+                  app:layout_constraintLeft_toLeftOf="@id/favColor"
+                  android:layout_marginTop="12dp" app:layout_constraintStart_toEndOf="@+id/favColor"
+                  android:layout_marginStart="12dp"/>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:textSize="30sp"
+                  android:textStyle="bold"
+                  android:id="@+id/points_score"
+                  android:text="@string/sample_points" android:textColor="@android:color/black"
+                  app:layout_constraintStart_toEndOf="@+id/favColor"
+                  app:layout_constraintTop_toTopOf="parent"
+                  android:layout_marginTop="24dp" android:layout_marginStart="240dp"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

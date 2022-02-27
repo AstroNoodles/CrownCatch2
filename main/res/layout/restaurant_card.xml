@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                                                   xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                   android:layout_width="match_parent" android:layout_height="wrap_content"
+                                                   android:id="@+id/restaurant_card" app:cardElevation="3dp" app:cardBackgroundColor="#e0f7fa"
+                                                   app:layout_constraintTop_toTopOf="parent" app:layout_constraintRight_toLeftOf="parent"
+                                                   android:background="@drawable/border_bg" app:cardCornerRadius="4dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout android:layout_width="match_parent"
+                                                           android:layout_height="wrap_content">
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:text="@string/restaurant_name"
+                      android:id="@+id/restaurant_name" android:textSize="20sp" android:textStyle="bold"
+                      android:textColor="@android:color/black"
+                      app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"/>
+            <androidx.appcompat.widget.AppCompatRatingBar android:layout_width="wrap_content" android:layout_height="wrap_content"
+                       android:id="@+id/restaurant_rating" app:layout_constraintTop_toBottomOf="@id/restaurant_name"
+                       app:layout_constraintStart_toStartOf="parent" android:rating="3" android:numStars="5"
+                       android:stepSize="1" android:isIndicator="true"
+                       style="@style/Widget.AppCompat.RatingBar.Indicator" android:max="5"
+                       app:buttonTint="@color/ratingOn" android:indeterminate="false"/>
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:text="@string/distance_away_placeholder" android:id="@+id/dist_away" android:textColor="#9e9e9e"
+                      android:textSize="14sp" app:layout_constraintTop_toBottomOf="@id/restaurant_rating"
+                      app:layout_constraintStart_toStartOf="parent" />
+
+
+            <androidx.appcompat.widget.AppCompatCheckBox android:layout_width="wrap_content"
+                                                         android:layout_height="wrap_content"
+                                                         android:id="@+id/takeOutMark"
+                                                         app:buttonTint="#42a5f5"
+                                                         app:layout_constraintLeft_toRightOf="@id/restaurant_rating"
+                                                         app:layout_constraintTop_toTopOf="parent"
+                                                         android:checked="true"
+                                                         android:clickable="false"
+                                                         android:layout_marginTop="8dp"
+                                                         android:layout_marginStart="44dp"/>
+
+            <androidx.appcompat.widget.AppCompatCheckBox android:layout_width="wrap_content"
+                                                         android:layout_height="wrap_content"
+                                                         android:id="@+id/dineInMark"
+                                                         app:buttonTint="#42a5f5"
+                                                         android:clickable="false"
+                                                         app:layout_constraintLeft_toRightOf="@id/restaurant_rating"
+                                                         app:layout_constraintTop_toTopOf="parent"
+                                                         android:checked="true"
+                                                         android:layout_marginTop="40dp"
+                                                         android:layout_marginStart="44dp"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:textColor="@android:color/black" android:textSize="13sp"
+                      android:text="@string/open_for_take_out"
+                      app:layout_constraintLeft_toRightOf="@id/takeOutMark"
+                      app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="16dp"
+                      android:id="@+id/takeOutText" android:layout_marginStart="8dp"/>
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                      android:textColor="@android:color/black" android:textSize="13sp"
+                      android:text="@string/open_for_dine_in"
+                      app:layout_constraintLeft_toRightOf="@id/takeOutMark"
+                      app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="48dp"
+                      android:id="@+id/dineInText" android:layout_marginStart="8dp"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+    </androidx.cardview.widget.CardView>

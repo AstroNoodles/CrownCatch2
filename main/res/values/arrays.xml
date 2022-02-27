@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="users">
+        <item>xMoneyxx</item>
+        <item>ProtonNeutron</item>
+        <item>SocialDistanceWarrior</item>
+        <item>HumptyDumpty33</item>
+        <item>MoneyMan77</item>
+        <item>5432Guitar1</item>
+        <item>Frank Sellers</item>
+        <item>Mario Penna</item>
+    </string-array>
+
+    <string-array name="description">
+        <item>A natural way to live your life.</item>
+        <item>Social Distancing is my life!</item>
+        <item>I often stay at home anyway.</item>
+        <item>I won\'t fall off the wall!</item>
+        <item>No description needed</item>
+        <item>I play music while stuck at home.</item>
+        <item>No description needed</item>
+        <item>Hello to CrownCatch!</item>
+    </string-array>
+
+    <string-array name="points">
+        <item>100</item>
+        <item>20</item>
+        <item>30</item>
+        <item>50</item>
+        <item>49</item>
+        <item>30</item>
+        <item>70</item>
+        <item>10</item>
+    </string-array>
+
+    <string-array name="favcolor">
+        <item>#e2f1fc</item>
+        <item>#757575</item>
+        <item>#fea342</item>
+        <item>#af1df2</item>
+        <item>#e1de1d</item>
+        <item>#7e6d1d</item>
+        <item>#0a0fdf</item>
+        <item>#fd34a6</item>
+    </string-array>
+</resources>
